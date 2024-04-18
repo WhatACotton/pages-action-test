@@ -34,6 +34,7 @@ try {
 			}
 		);
 		const json: any = await response.json();
+		console.log("json:", json);
 		if (response.status !== 200) {
 			await summary.addRaw(`Failed to set production branch, API returned non-200: ${response.status}`).write();
 			throw new Error("Failed to set production branch, API returned non-200");
