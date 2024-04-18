@@ -19,7 +19,7 @@ jobs:
           directory: example
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.head_ref || github.ref_name }}
-          productionBranch: main
+          productionBranch: develop
         id: publish
       - name: Outputs
         run: |
