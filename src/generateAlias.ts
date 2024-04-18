@@ -12,7 +12,6 @@ export const generateURL = (branch: string, URL: string): string => {
     if (!generatedBranch) {
         return ""
     }
-    console.log(generatedBranch)
     const url = URL.split(".");
     url[0] = "https://" + branch;
     return url.join(".")
@@ -27,7 +26,7 @@ function generateBranchAlias(branch: string): string | undefined {
     normalised = trim(normalised, '-')
 
     if (normalised === '') {
-        return undefined
+        return `branch-${randAlphaNum(10)}`
     }
 
     return normalised
