@@ -159,6 +159,7 @@ try {
 
 	(async () => {
 		const { before_branch, current_branch } = await setProductionBranch();
+		console.log("before_branch:", before_branch, "current_branch:", current_branch);
 		const project = await getProject();
 
 		const productionEnvironment = githubBranch === project.production_branch || branch === project.production_branch;
