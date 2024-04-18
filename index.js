@@ -22135,12 +22135,11 @@ try {
       }
     );
     const json = await response.json();
-    console.log("json:", json.result.production_branch);
     if (response.status !== 200) {
       await import_core.summary.addRaw(`Failed to set production branch, API returned non-200: ${response.status}`).write();
       throw new Error("Failed to set production branch, API returned non-200");
     }
-    return json.result.latest_deployment.production_branch, json.result.production_branch;
+    return { before_branch: json.result.production_branch, current_branch: production_branch };
   };
   const getProject = async () => {
     const response = await (0, import_undici.fetch)(
