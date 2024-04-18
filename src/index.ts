@@ -175,6 +175,7 @@ try {
 
 		let alias = "";
 		console.log(branch, production_branch);
+
 		if (branch != production_branch) {
 			alias = generateURL(branch, pagesDeployment.url);
 		}
