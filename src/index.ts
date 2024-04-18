@@ -174,7 +174,7 @@ try {
 		const pagesDeployment = await createPagesDeployment();
 
 		let alias = "";
-		console.log(branch, production_branch);
+		console.log("branch:", branch, "prod_branch:", production_branch);
 
 		if (branch != production_branch) {
 			alias = generateURL(branch, pagesDeployment.url);
