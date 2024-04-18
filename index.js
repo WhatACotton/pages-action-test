@@ -22230,7 +22230,7 @@ try {
 | **Last commit:**        | \`${deployment.deployment_trigger.metadata.commit_hash.substring(0, 8)}\` |
 | **Status**:             | ${status} |
 | **Preview URL**:        | ${deployment.url} |
-| **Branch Preview URL**: | ${aliasUrl && "This URL was not generated because the branch is the production branch."} |
+| **Branch Preview URL**: | ${aliasUrl ? aliasUrl : "This URL was not generated because the branch is the production branch."} |
       `
     ).write();
   };
